@@ -1,0 +1,4 @@
+[submodule "cordetfw"]
+	path = lib/cordetfw
+	url = https://github.com/pnp-software/cordetfw.git
+	branch = master
