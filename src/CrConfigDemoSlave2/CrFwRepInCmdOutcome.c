@@ -69,3 +69,10 @@ void CrFwRepInCmdOutcome(CrFwRepInCmdOutcome_t outcome, CrFwInstanceId_t instanc
 		printf("    service sub-type %d, and discriminant %d; fail code: %d\n",servSubType,disc,failCode);
 	}
 }
+
+/*-----------------------------------------------------------------------------------------*/
+void CrFwRepInCmdOutcomeCreFail(CrFwRepInCmdOutcome_t outcome, CrFwOutcome_t failCode, CrFwPckt_t pckt) {
+
+	printf("S2: failure to create InCommand component\n");
+}
+

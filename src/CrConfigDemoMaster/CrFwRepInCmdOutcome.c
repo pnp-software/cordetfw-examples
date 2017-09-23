@@ -40,7 +40,14 @@
 void CrFwRepInCmdOutcome(CrFwRepInCmdOutcome_t outcome, CrFwInstanceId_t instanceId, CrFwServType_t servType,
                          CrFwServSubType_t servSubType, CrFwDiscriminant_t disc, CrFwOutcome_t failCode, FwSmDesc_t inCmd) {
 
-	printf("CrFwRepInCmdOutcome: unexpected outcome report for InCommand %d, service type %d,\n",instanceId,servType);
+	printf("CrFwRepInCmdOutcome: unexpected outcome for InCommand %d, service type %d,\n",instanceId,servType);
 	printf("                     service sub-type %d, and discriminant %d\n",servSubType,disc);
 
 }
+
+/*-----------------------------------------------------------------------------------------*/
+void CrFwRepInCmdOutcomeCreFail(CrFwRepInCmdOutcome_t outcome, CrFwOutcome_t failCode, CrFwPckt_t pckt) {
+
+	printf("CrFwRepInCmdOutcomeCreFailt: failure to create InCommand component\n");
+}
+
