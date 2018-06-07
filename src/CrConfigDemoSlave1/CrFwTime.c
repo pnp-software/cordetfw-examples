@@ -12,7 +12,7 @@
  * providing their application-specific implementation.
  *
  * This implementation maintains an integer which is incremented by 1 every
- * time function <code>::CrFwGetCurrentTime</code> is called.
+ * time function <code>::CrFwGetCurrentTimeStamp</code> is called.
  * The function returns the value of this integer.
  *
  * @author Vaclav Cechticky <vaclav.cechticky@pnp-software.com>
@@ -32,13 +32,35 @@
 #include "CrFwConstants.h"
 #include "CrFwTime.h"
 
-/** The <code>::CrFwGetCurrentTime</code> increments this counter and then returns its value */
+/** The <code>::CrFwGetCurrentTimeStamp</code> function increments this counter and then returns its value */
 static CrFwTimeStamp_t dummyTime = 0;
 
 /*-----------------------------------------------------------------------------------------*/
-CrFwTimeStamp_t CrFwGetCurrentTime() {
+CrFwTimeStamp_t CrFwGetCurrentTimeStamp() {
 	dummyTime++;
 	return dummyTime;
 }
+
+/*-----------------------------------------------------------------------------------------*/
+CrFwTime_t CrFwGetCurrentTime() {
+	return dummyTime;
+}
+
+/*-----------------------------------------------------------------------------------------*/
+CrFwTimeCyc_t CrFwGetCurrentCycTime() {
+	return dummyTime;
+}
+
+/*-----------------------------------------------------------------------------------------*/
+CrFwTimeStamp_t CrFwStdTimeToTimeStamp(CrFwTime_t stdTime) {
+	return (CrFwTimeStamp_t) stdTime;
+}
+
+/*-----------------------------------------------------------------------------------------*/
+CrFwTime_t CrFwTimeStampToStdTime(CrFwTimeStamp_t timeStamp) {
+	return (CrFwTime_t) timeStamp;
+}
+
+
 
 
