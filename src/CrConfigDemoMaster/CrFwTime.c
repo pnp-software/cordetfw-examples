@@ -42,7 +42,7 @@ CrFwTimeStamp_t CrFwGetCurrentTimeStamp() {
 }
 
 /*-----------------------------------------------------------------------------------------*/
-CrFwTime_t CrFwGetCurrentTime() {
+CrFwTimeStamp_t CrFwGetCurrentTime() {
 	return dummyTime;
 }
 
